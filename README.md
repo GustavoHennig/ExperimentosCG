@@ -7,7 +7,7 @@ Recursos implementados:
  - Geração de histograma
 
 
-![alt text](https://raw.githubusercontent.com/GustavoHennig/ExperimentosCG/master/screenshot-limiarizacao.jpg "Limiarização")
+![alt text](https://raw.githubusercontent.com/GustavoHennig/ExperimentosCG/master/ExperimentosCG.jpg "Limiarização")
 
 
 Licença: GPL
