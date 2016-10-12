@@ -1,5 +1,5 @@
 # Experimentos CG
-Experimentos de Computação Gráfica foi originado em um trabalho de uma disciplina de Computação Gráfica (2008), depois novos experimentos foram adicionados.
+Experimentos de Computação Gráfica foi originado de um trabalho de uma disciplina de Computação Gráfica (2008). Algum tempo depois, novos experimentos foram adicionados.
 
 
 Recursos implementados: 
