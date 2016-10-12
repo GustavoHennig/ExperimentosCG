@@ -9,7 +9,7 @@
  * 
  */
 
-namespace Trab2_CG
+namespace ExperimentosCG
 {
     partial class Histograma
     {

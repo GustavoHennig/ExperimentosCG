@@ -20,7 +20,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using ZedGraph;
 
-namespace Trab2_CG
+namespace ExperimentosCG
 {
     public partial class FormPrincipal : Form
     {
@@ -30,15 +30,12 @@ namespace Trab2_CG
         }
         private Bitmap ImagemEmEscalaCinza;
         private Histograma h = new Histograma();
+        private bool EscalaDeCinza = false;
 
         private bool mostroumsg = false;
         private void btnOpenImage_Click(object sender, EventArgs e)
         {
-            if (!mostroumsg)
-            {
-                MessageBox.Show("O software aceita imagens coloridas, porém serão exibidas somente em escala de cinza.\n(Serão convertidas automaticamente)");
-                mostroumsg = true;
-            }
+
             FileDialog fd = new OpenFileDialog();
             fd.Filter = "Arquivos de Imagem (*.jpg;*.jpeg;*.bmp;*.gif;*.png)|*.jpg;*.jpeg;*.bmp;*.gif;*.png";
             fd.ShowDialog();
@@ -53,7 +50,8 @@ namespace Trab2_CG
         private void AbrirImagem(string p)
         {
             pictureBox1.Image = Image.FromFile(p);
-            ConverteParaCinzaMontaHistograma();
+            EscalaDeCinza = false;
+            //ConverteParaCinzaMontaHistograma();
 
         }
         public Dictionary<Color, long> histograma = new Dictionary<Color, long>();
@@ -64,8 +62,9 @@ namespace Trab2_CG
             {
                 pictureBox1.Image = (Bitmap)this.ImagemEmEscalaCinza.Clone();
             }
-            catch (Exception) { 
-            
+            catch (Exception)
+            {
+
             }
         }
 
@@ -156,6 +155,7 @@ namespace Trab2_CG
 
             ImagemEmEscalaCinza = b;
             pictureBox1.Image = (Image)b.Clone();
+            EscalaDeCinza = true;
             //MessageBox.Show(histograma.Count.ToString());
         }
 
@@ -167,15 +167,25 @@ namespace Trab2_CG
         private void bntAplLimiar_Click(object sender, EventArgs e)
         {
 
+            if (!EscalaDeCinza)
+            {
+                if (!mostroumsg)
+                {
+                    MessageBox.Show("Essa função irá converter a imagem para escala de cinza.");
+                    mostroumsg = true;
+                }
+                ConverteParaCinzaMontaHistograma();
+            }
+
+
             try
             {
                 trackBar1.Value = Convert.ToInt32(textBox1.Text);
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 MessageBox.Show("Você informou um valor inválido, digite números entre 0 e 255");
                 return;
-            
-            
             }
 
 
@@ -185,7 +195,6 @@ namespace Trab2_CG
             }
             else
             {
-
                 AplicaLimiar((int)trackBar1.Value);
             }
         }
@@ -271,6 +280,9 @@ namespace Trab2_CG
 
         private void btnShowHist_Click(object sender, EventArgs e)
         {
+            if (!EscalaDeCinza)
+                ConverteParaCinzaMontaHistograma();
+
             if (h.IsDisposed)
             {
                 h = new Histograma();
@@ -316,7 +328,7 @@ namespace Trab2_CG
         {
 
             FileDialog fd = new SaveFileDialog();
-            fd.AddExtension  = true;
+            fd.AddExtension = true;
             fd.Filter = "Arquivos PNG (*.png)|*.png";
             fd.ShowDialog();
 
@@ -333,9 +345,21 @@ namespace Trab2_CG
             {
                 pictureBox1.Image.Save(p);
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 MessageBox.Show("Não foi possível salvar a imagem: " + e.Message);
             }
+        }
+
+        private void btnFiltroRabiscar_Click(object sender, EventArgs e)
+        {
+            FiltroRabiscar fr = new FiltroRabiscar();
+            fr.Raio = Convert.ToInt32(numRaio.Value);
+            Bitmap bmp = (Bitmap)pictureBox1.Image;
+
+            fr.ApplyEffect(bmp);
+
+            pictureBox1.Image = (Image)bmp;
         }
     }
 }

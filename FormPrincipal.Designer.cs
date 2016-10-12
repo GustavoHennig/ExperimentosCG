@@ -9,7 +9,7 @@
  * 
  */
 
-namespace Trab2_CG
+namespace ExperimentosCG
 {
     partial class FormPrincipal
     {
@@ -54,11 +54,16 @@ namespace Trab2_CG
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnSave = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnFiltroRabiscar = new System.Windows.Forms.Button();
+            this.numRaio = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.statusBar.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRaio)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -90,10 +95,10 @@ namespace Trab2_CG
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(18, 168);
+            this.panel1.Location = new System.Drawing.Point(18, 169);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1114, 745);
+            this.panel1.Size = new System.Drawing.Size(1216, 773);
             this.panel1.TabIndex = 2;
             this.panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel1_Scroll);
             // 
@@ -121,12 +126,14 @@ namespace Trab2_CG
             // 
             // trackBar1
             // 
+            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBar1.Location = new System.Drawing.Point(9, 28);
             this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar1.Maximum = 255;
             this.trackBar1.MaximumSize = new System.Drawing.Size(900, 0);
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(896, 69);
+            this.trackBar1.Size = new System.Drawing.Size(788, 69);
             this.trackBar1.TabIndex = 6;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_Scroll);
@@ -135,15 +142,17 @@ namespace Trab2_CG
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.chkAutoAplicar);
             this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.bntAplLimiar);
-            this.groupBox1.Location = new System.Drawing.Point(220, 5);
+            this.groupBox1.Location = new System.Drawing.Point(218, 5);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(914, 154);
+            this.groupBox1.Size = new System.Drawing.Size(842, 154);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Escolha do Limiar";
@@ -200,10 +209,10 @@ namespace Trab2_CG
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar1,
             this.toolStripStatusLabel1});
-            this.statusBar.Location = new System.Drawing.Point(0, 932);
+            this.statusBar.Location = new System.Drawing.Point(0, 961);
             this.statusBar.Name = "statusBar";
             this.statusBar.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusBar.Size = new System.Drawing.Size(1150, 31);
+            this.statusBar.Size = new System.Drawing.Size(1252, 31);
             this.statusBar.TabIndex = 10;
             // 
             // progressBar1
@@ -229,11 +238,47 @@ namespace Trab2_CG
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.numRaio);
+            this.groupBox2.Controls.Add(this.btnFiltroRabiscar);
+            this.groupBox2.Location = new System.Drawing.Point(1067, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(167, 154);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtro Rabiscar";
+            // 
+            // btnFiltroRabiscar
+            // 
+            this.btnFiltroRabiscar.Location = new System.Drawing.Point(28, 87);
+            this.btnFiltroRabiscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFiltroRabiscar.Name = "btnFiltroRabiscar";
+            this.btnFiltroRabiscar.Size = new System.Drawing.Size(112, 35);
+            this.btnFiltroRabiscar.TabIndex = 5;
+            this.btnFiltroRabiscar.Text = "Aplicar";
+            this.btnFiltroRabiscar.UseVisualStyleBackColor = true;
+            this.btnFiltroRabiscar.Click += new System.EventHandler(this.btnFiltroRabiscar_Click);
+            // 
+            // numRaio
+            // 
+            this.numRaio.Location = new System.Drawing.Point(28, 45);
+            this.numRaio.Name = "numRaio";
+            this.numRaio.Size = new System.Drawing.Size(120, 26);
+            this.numRaio.TabIndex = 6;
+            this.numRaio.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 963);
+            this.ClientSize = new System.Drawing.Size(1252, 992);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.statusBar);
@@ -244,7 +289,7 @@ namespace Trab2_CG
             this.Controls.Add(this.btnOpenImage);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPrincipal";
-            this.Text = "Experimentos de Computação Gráfica - Binarização - Histograma";
+            this.Text = "Experimentos de Computação Gráfica - Binarização, Histograma, Rabiscar";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -253,6 +298,8 @@ namespace Trab2_CG
             this.groupBox1.PerformLayout();
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numRaio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,6 +322,9 @@ namespace Trab2_CG
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripProgressBar progressBar1;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnFiltroRabiscar;
+        private System.Windows.Forms.NumericUpDown numRaio;
     }
 }
 

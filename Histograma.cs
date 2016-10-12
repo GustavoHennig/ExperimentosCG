@@ -18,7 +18,7 @@ using System.Text;
 using System.Windows.Forms;
 using ZedGraph;
 
-namespace Trab2_CG
+namespace ExperimentosCG
 {
     public partial class Histograma : Form
     {
@@ -71,13 +71,7 @@ namespace Trab2_CG
                     //list.Add(pp);
                     list2.Add((double)limiar, max);     
                 }
-
-                
-                
-
-
             }
-
 
             zedGraphControl1.GraphPane = new GraphPane();
 

@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Trab2_CG
+namespace ExperimentosCG
 {
     static class Program
     {

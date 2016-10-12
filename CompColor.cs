@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 
-namespace Trab2_CG
+namespace ExperimentosCG
 {
     public class CompColor : IComparer<Color>
     {
