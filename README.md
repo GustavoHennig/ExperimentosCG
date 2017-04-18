@@ -16,3 +16,5 @@ Recursos implementados:
 Licença: GPL
 
 Gustavo Augusto Hennig
+
+Supported By: [Plagius - Plagiarism Checker](http://www.plagius.com/en/plagiarism-checker)
